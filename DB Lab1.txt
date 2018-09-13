@@ -1,0 +1,29 @@
+Create database lab1;
+
+CREATE TABLE users11(
+  id SERIAL PRIMARY KEY,
+  firstname VARCHAR(50),
+  lastname VARCHAR(50)
+);
+
+ALTER TABLE users11
+    add column isadmin int;
+
+ALTER TABLE users11
+    alter column isadmin set data type boolean USING isadmin::boolean;
+
+select * from users;
+
+insert into users (isadmin) values (false);
+
+create table tasks(
+  id serial primary key,
+  name varchar(50),
+  user_id int
+);
+
+select * from tasks;
+
+drop table if exists tasks;
+
+drop database if exists lab1;
